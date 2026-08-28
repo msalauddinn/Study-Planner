@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Study Planner</string>
+    <string name="get_started">Get Started</string>
+    <string name="your_name">YOUR NAME</string>
+    <string name="name_placeholder">e.g. Md Salauddin</string>
+    <string name="study_goal">DAILY STUDY GOAL</string>
+    <string name="study_session">DEFAULT SESSION DURATION</string>
+    <string name="sub_title">Plan your sessions, track your progress, and reach your academic goals.</string>
 </resources>

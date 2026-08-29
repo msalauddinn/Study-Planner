@@ -16,5 +16,14 @@
     <string name="today_progress">Today\'s Progress</string>
     <string name="one">1</string>
     <string name="of_four">OF 4</string>
+    <string name="add_study_session">Add Study Session</string>
+    <string name="subject">SUBJECT</string>
+    <string name="topic">TOPIC</string>
+    <string name="date">DATE</string>
+    <string name="time">TIME</string>
+    <string name="ok">Ok</string>
+    <string name="select_time">Select Time</string>
+    <string name="subject_place_holder">e.g. Android Development</string>
+    <string name="topic_place_holder">e.g. Preference Data Store</string>
     <string name="sub_title">Plan your sessions, track your progress, and reach your academic goals.</string>
 </resources>

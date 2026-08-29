@@ -4,21 +4,17 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.biopic.studyplanner.ui.theme.StudyPlannerTheme
-import com.biopic.studyplanner.ui.theme.White
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +25,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier
                         .fillMaxSize()
-                ) { MainPage() }
+                ) { MainScreen(navController = rememberNavController(), name = "Md Salauddin", goal = "2h") }
             }
         }
     }
@@ -49,6 +45,27 @@ fun MainPage() {
             OnBoardingScreen(
                 navController = navController
             )
+        }
+
+        composable(
+            route = "${Screen.MAINSCREEN}/{name}/{goal}",
+            arguments = listOf(
+                navArgument("name") {
+                    type = NavType.StringType
+                },
+                navArgument("goal") {
+                    type = NavType.StringType
+                }
+            )
+        ) { backStackEntry ->
+            val name = backStackEntry.arguments?.getString("name")
+            val goal = backStackEntry.arguments?.getString("goal")
+
+            name?.let { name ->
+                goal?.let { goal ->
+                    MainScreen(navController = navController, name = name, goal = goal)
+                }
+            }
         }
     }
 }

@@ -5,5 +5,16 @@
     <string name="name_placeholder">e.g. Md Salauddin</string>
     <string name="study_goal">DAILY STUDY GOAL</string>
     <string name="study_session">DEFAULT SESSION DURATION</string>
+    <string name="session_title">All Sessions</string>
+    <string name="setting_title">Settings</string>
+    <string name="home">Home</string>
+    <string name="session">Session</string>
+    <string name="sessions">Sessions</string>
+    <string name="study_time">Study Time</string>
+    <string name="setting">Setting</string>
+    <string name="add_session">Add Session</string>
+    <string name="today_progress">Today\'s Progress</string>
+    <string name="one">1</string>
+    <string name="of_four">OF 4</string>
     <string name="sub_title">Plan your sessions, track your progress, and reach your academic goals.</string>
 </resources>

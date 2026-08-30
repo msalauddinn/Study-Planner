@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier
                         .fillMaxSize()
-                ) { AddSessionScreen() }
+                ) { MainScreen(navController = rememberNavController(), name = "Md Salauddin", goal = "2h") }
             }
         }
     }

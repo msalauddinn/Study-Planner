@@ -228,7 +228,7 @@ fun OnBoardingScreen(navController : NavController) {
 
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth(0.85f),
+                        .fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     list.forEach { text ->
@@ -253,7 +253,7 @@ fun OnBoardingScreen(navController : NavController) {
 
                 Row(
                     modifier = Modifier
-                        .fillMaxWidth(0.9f),
+                        .fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     listSession.forEach { text ->

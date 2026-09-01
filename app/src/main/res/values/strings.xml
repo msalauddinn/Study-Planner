@@ -23,6 +23,9 @@
     <string name="time">TIME</string>
     <string name="ok">Ok</string>
     <string name="select_time">Select Time</string>
+    <string name="duration">DURATION</string>
+    <string name="priority">PRIORITY</string>
+    <string name="save_session">Save Session</string>
     <string name="subject_place_holder">e.g. Android Development</string>
     <string name="topic_place_holder">e.g. Preference Data Store</string>
     <string name="sub_title">Plan your sessions, track your progress, and reach your academic goals.</string>

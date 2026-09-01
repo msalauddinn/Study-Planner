@@ -31,8 +31,8 @@ fun SelectionChip(
         modifier = Modifier
             .size(
                 when(plannerType) {
-                    PlannerType.GOAL -> 48.dp
-                    PlannerType.SESSION -> 68.dp
+                    PlannerType.GOAL -> 56.dp
+                    PlannerType.SESSION -> 76.dp
                 },
                 40.dp
             )

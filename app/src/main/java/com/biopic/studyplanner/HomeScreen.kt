@@ -128,30 +128,6 @@ fun HomeScreenGreetings(
 }
 
 @Composable
-fun FloatingAddSession() {
-    Row(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(vertical = 8.dp, horizontal = 20.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Icon(
-            painter = painterResource(R.drawable.add),
-            contentDescription = "Add",
-            tint = White,
-            modifier = Modifier.size(20.dp)
-        )
-
-        Text(
-            text = stringResource(R.string.add_session),
-            fontSize = 14.sp,
-            fontWeight = FontWeight(700)
-        )
-    }
-}
-
-@Composable
 fun ProgressBar(
     goal : String
 ) {

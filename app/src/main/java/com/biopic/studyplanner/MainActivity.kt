@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier
                         .fillMaxSize()
-                ) { AddSessionScreen() }
+                ) { MainPage() }
             }
         }
     }
@@ -42,30 +42,38 @@ fun MainPage() {
         startDestination = Screen.ONBOARDING
     ) {
         composable(route = Screen.ONBOARDING) {
-            OnBoardingScreen(
+            OnboardingScreen(
                 navController = navController
             )
         }
 
         composable(
-            route = "${Screen.MAINSCREEN}/{name}/{goal}",
+            route = "${Screen.MAIN_SCREEN}/{name}/{goal}/{session}",
             arguments = listOf(
                 navArgument("name") {
                     type = NavType.StringType
                 },
                 navArgument("goal") {
                     type = NavType.StringType
+                },
+                navArgument("session") {
+                    type = NavType.StringType
                 }
             )
         ) { backStackEntry ->
             val name = backStackEntry.arguments?.getString("name")
             val goal = backStackEntry.arguments?.getString("goal")
+            val session = backStackEntry.arguments?.getString("session")
 
             name?.let { name ->
                 goal?.let { goal ->
-                    MainScreen(navController = navController, name = name, goal = goal)
+                    session?.let { session ->
+                        MainScreen(navController = navController, name = name, goal = goal, session = session)
+                    }
                 }
             }
         }
+
+        composable(route = Screen.ADD_SESSION_SCREEN) {  }
     }
 }

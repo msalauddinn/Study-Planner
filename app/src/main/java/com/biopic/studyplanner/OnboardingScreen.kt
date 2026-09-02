@@ -36,11 +36,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.biopic.studyplanner.ui.theme.Black
 import com.biopic.studyplanner.ui.theme.DarkPurple
 import com.biopic.studyplanner.ui.theme.LightLavender
@@ -50,14 +48,14 @@ import com.biopic.studyplanner.ui.theme.White
 import com.biopic.studyplanner.ui.theme.White20
 
 @Composable
-fun OnBoardingScreen(navController : NavController) {
+fun OnboardingScreen(navController : NavController) {
 
     val focusManager = LocalFocusManager.current
 
     var nameText by remember { mutableStateOf("") }
 
     val list = listOf("1h", "2h", "3h", "4h", "5h")
-    var selectedGoal by remember { mutableStateOf(list[1]) }
+    var selectedGoal by remember { mutableStateOf(list[2]) }
     val listSession = listOf("30 min", "45 min", "60 min", "90 min")
     var selectedSession by remember { mutableStateOf(listSession[1]) }
 
@@ -83,7 +81,11 @@ fun OnBoardingScreen(navController : NavController) {
                     ),
                     shape = RoundedCornerShape(15.dp),
                     onClick = {
-
+                        if (!nameText.isBlank()) {
+                            navController.navigate(route = "${Screen.MAIN_SCREEN}/$nameText/$selectedGoal/$selectedSession") {
+                                popUpTo(route = Screen.ONBOARDING) { inclusive = true}
+                            }
+                        }
                     }
                 ) {
                     Text(
@@ -264,10 +266,4 @@ fun OnBoardingScreen(navController : NavController) {
         }
     }
 
-}
-
-@Preview (showBackground = true)
-@Composable
-fun OnBoardingPreview() {
-    OnBoardingScreen(navController = rememberNavController())
 }
